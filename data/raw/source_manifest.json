@@ -1,0 +1,138 @@
+{
+  "retrieved_at_utc": "2026-11-03T06:11:18.344388+00:00",
+  "study_area": "New York County (Manhattan), NY",
+  "data_vintages": {
+    "acs": "2024 ACS 5-year estimates (2020-2024), table B01003",
+    "lodes": "LODES 8 WAC JT01, 2023",
+    "mta": "NY MTA Subway Hourly Ridership, 2026-08",
+    "vacancies": "NYC DOF reporting year 2025; later available 2026 status is used where reported"
+  },
+  "sources": {
+    "census_gazetteer": {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2024_Gazetteer/2024_Gaz_tracts_national.zip",
+      "file": "gazetteer_2024_tracts_national.zip",
+      "bytes": 2420663,
+      "sha256": "089cbeb3908833b73f7c8ea45fcc4498b788f70ab1242d87923e1762c274b5c7"
+    },
+    "acs_2024_b01003": {
+      "url": "https://www2.census.gov/programs-surveys/acs/summary_file/2024/table-based-SF/data/5YRData/acsdt5y2024-b01003.dat",
+      "file": "acs_2024_b01003.dat",
+      "bytes": 18313708,
+      "sha256": "38d1a992bb058d184009b10b9b34987279aee575e4323165cfb5706c69b6ca90"
+    },
+    "lodes_wac_jt01": {
+      "url": "https://lehd.ces.census.gov/data/lodes/LODES8/ny/wac/ny_wac_S000_JT01_2023.csv.gz",
+      "file": "ny_wac_S000_JT01_2023.csv.gz",
+      "bytes": 2683048,
+      "sha256": "d9b399895f5bba0eebd1388eb1946fa03cf9d1ea54f71ecd3a8d329ee018c398"
+    },
+    "mta_subway_ridership": {
+      "dataset_id": "5wq4-mkjj",
+      "url": "https://data.ny.gov/resource/5wq4-mkjj.json",
+      "where": "borough='Manhattan' AND transit_mode='subway' AND transit_timestamp in [2026-08-01T00:00:00, 2026-09-01T00:00:00)",
+      "aggregation": "31 daily Socrata queries; sum ridership by station complex per day, then mean over observed dates",
+      "daily_file": "mta_station_daily_2026-08.csv",
+      "daily_rows": 3751,
+      "stations": 121,
+      "min_days_per_station": 31,
+      "month_days": 31
+    },
+    "dohmh_restaurant_inspections": {
+      "dataset_id": "43nn-pn8j",
+      "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+      "where": "boro='Manhattan' AND (cuisine_description='Coffee/Tea' OR upper(dba) like '%STARBUCKS%' OR upper(dba) like '%DUNKIN%' OR upper(dba) like '%BLUESTONE%' OR upper(dba) like '%JOE COFFEE%' OR upper(dba) like '%BLUE BOTTLE%' OR upper(dba) like '%PRET%' OR upper(dba) like '%GREGORYS%' OR upper(dba) like '%TIM HORTONS%' OR upper(dba) like '%COFFEE PROJECT%' OR upper(dba) like '%MAMAN%' OR upper(dba) like '%VARIETY COFFEE%' OR upper(dba) like '%BLANK STREET%' OR upper(dba) like '%COTTI%' OR upper(dba) like '%LUCKIN%')",
+      "raw_rows": 12900
+    },
+    "store_status_note": "Luckin locations are unique DOHMH inspection/establishment records; current operating status was not independently confirmed from the chain locator.",
+    "nyc_dof_storefronts": {
+      "dataset_id": "92iy-9c3n",
+      "url": "https://data.cityofnewyork.us/resource/92iy-9c3n.json",
+      "where": "borough='MANHATTAN' AND reporting_year='2025'",
+      "raw_rows": 26511,
+      "source_description": "DOF storefront registrations; includes both vacant and non-vacant storefronts.",
+      "clean_candidates": 2345,
+      "vacancy_rule": "vacant_6_30_or_date_sold=YES, or blank with vacant_on_12_31=YES; exclude construction_reported=YES; valid Manhattan coordinates; collapse rounded 6-decimal coordinate duplicates"
+    }
+  },
+  "files": {
+    "acs_2024_b01003.dat": {
+      "bytes": 18313708,
+      "sha256": "38d1a992bb058d184009b10b9b34987279aee575e4323165cfb5706c69b6ca90"
+    },
+    "competitors_dohmh.csv": {
+      "bytes": 177774,
+      "sha256": "c9d732c046d73e9a9e44956087cf5d7a8c0760808f38422f4777ce801ff53f20"
+    },
+    "dohmh_cafes_raw.csv": {
+      "bytes": 1933069,
+      "sha256": "0ad156a34ec07bb7b4e39a16c6451d7c92ee1f7369a345538d30eb78274b0e84"
+    },
+    "gazetteer_2024_tracts_national.zip": {
+      "bytes": 2420663,
+      "sha256": "089cbeb3908833b73f7c8ea45fcc4498b788f70ab1242d87923e1762c274b5c7"
+    },
+    "jobs.csv": {
+      "bytes": 5556,
+      "sha256": "b19ca90d476927e7e5c8dbe18691a8bb87838c73813804bab85b94642dc6f9f5"
+    },
+    "luckin.csv": {
+      "bytes": 959,
+      "sha256": "a3430eb6b8da153f1d55fe09fa8bee1448ca1473d4375e5c213d7d2fafad3925"
+    },
+    "luckin_from_dohmh.csv": {
+      "bytes": 2816,
+      "sha256": "d3ff045152bad4f0178bd09f871d7044532cc3e5ff9d2fa9e8837e9c3a9b2c75"
+    },
+    "mta_station_daily_2026-08.csv": {
+      "bytes": 235810,
+      "sha256": "7aeb1b6c74ce0410f24b69d75fd1a8bc2d9e17a73aa244789c72fa619a992ef6"
+    },
+    "ny_wac_S000_JT01_2023.csv.gz": {
+      "bytes": 2683048,
+      "sha256": "d9b399895f5bba0eebd1388eb1946fa03cf9d1ea54f71ecd3a8d329ee018c398"
+    },
+    "residents.csv": {
+      "bytes": 6927,
+      "sha256": "c21b1f5f282dbe98ee41b68dc41b9586e7a3d85c5e0312ad5f711fe547aff250"
+    },
+    "storefronts_manhattan_2025_raw.csv": {
+      "bytes": 5236889,
+      "sha256": "a2f53139e59550ec0aaeaaf87adb0e4cca3f5b51369aba483a43e28d7118669d"
+    },
+    "storefronts_vacant_manhattan.csv": {
+      "bytes": 671199,
+      "sha256": "28794f08981f90fd5f7fe2cebbd28e6c793c3fb9ca76f61ccea092251b76a5b9"
+    },
+    "subway_202608.csv": {
+      "bytes": 8095,
+      "sha256": "7645ac6ce20f870686ff3e28b87374dd2d035c649d4205803bed103d8cdc8a5f"
+    },
+    "tract_points.csv": {
+      "bytes": 13222,
+      "sha256": "000920c6830b9eac6045f6486dc6c265fa7272f1a5b20b100a2fdd84ad8b707a"
+    }
+  },
+  "cleaned_row_counts": {
+    "tract_points": 310,
+    "residents": 310,
+    "tracts_with_lodes_jobs": 310,
+    "subway_station_complexes": 121,
+    "competitor_establishments": 1332,
+    "luckin_establishments": 22,
+    "vacant_storefront_candidates": 2345
+  },
+  "quality_findings": {
+    "candidate_rent_quotes_missing": 2345,
+    "candidate_rent_fallback_assumption_psf_month": 9.0,
+    "candidate_fitout_flags_assumed_zero": 2345,
+    "luckin_operating_status_unverified": 22,
+    "competitor_operating_status_unverified": 1332
+  },
+  "limitations": [
+    "DOHMH inspection records do not independently establish that an establishment is currently open.",
+    "Luckin locations are provisional DOHMH records; the official chain locator was not reachable during retrieval.",
+    "DOF coordinates are storefront/building-level geocodes, not verified entrance coordinates.",
+    "DOF source does not provide asking rent or reusable fit-out status; the model's $9/sf/month rent fallback and fit-out flag are assumptions, not measurements.",
+    "LODES workplace jobs and subway entries are demand proxies, not observed coffee purchases."
+  ]
+}

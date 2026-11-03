@@ -1,0 +1,7 @@
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11        # HiGHS cross-check (scipy.optimize.milp)
+requests>=2.31     # fetch_data.py
+matplotlib>=3.8    # visualize_results.py
+gurobipy>=11.0     # needs the free ACADEMIC licence; the pip licence is capped at 2,000 vars/constraints
+# optional, for true pedestrian distances:  osmnx>=1.9  scikit-learn

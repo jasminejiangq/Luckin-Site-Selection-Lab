@@ -1,0 +1,36 @@
+{
+  "built_at_utc": "2026-11-03T06:27:23.272747+00:00",
+  "walk_method": "grid",
+  "walk_distance_note": "Approximate Manhattan-grid L1 distances; not pedestrian network routes.",
+  "keep_distance_m": 2400.0,
+  "rows": {
+    "tracts": 310,
+    "candidates": 2345,
+    "luckin": 22,
+    "competitors": 1332,
+    "walk_dist": 180456
+  },
+  "files": {
+    "tracts.csv": {
+      "bytes": 16812,
+      "sha256": "fc41b8e88001d298e0513ccd91a06e2b7eafceddb7d051fe4cdc89b295983e1a"
+    },
+    "candidates.csv": {
+      "bytes": 250330,
+      "sha256": "4613654dd36458b95594577e3ef45e2a9cee35536cc103552b1f5ede6e0eaeb2"
+    },
+    "luckin.csv": {
+      "bytes": 959,
+      "sha256": "a3430eb6b8da153f1d55fe09fa8bee1448ca1473d4375e5c213d7d2fafad3925"
+    },
+    "competitors.csv": {
+      "bytes": 58371,
+      "sha256": "9da03e979cb993dfdcc86dc5b1ccf673eb9d08eb6b460c08b9592db75098c506"
+    },
+    "walk_dist.csv": {
+      "bytes": 8283872,
+      "sha256": "01586b967dc7507a5eba703c0dd4044904c26eaa4e1386276a47ead0154d5a62"
+    }
+  },
+  "source_manifest": "data/raw/source_manifest.json"
+}

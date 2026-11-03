@@ -1,0 +1,10 @@
+plan,scenario,NPV,regret,feasible,n_open
+low,low,70313419.94415534,0.0,True,10
+low,base,143250000.16313064,0.0,True,10
+low,high,230773896.42590103,0.0,True,10
+base,low,70313419.94415534,0.0,True,10
+base,base,143250000.16313064,0.0,True,10
+base,high,230773896.42590103,0.0,True,10
+high,low,70313419.94415534,0.0,True,10
+high,base,143250000.16313064,0.0,True,10
+high,high,230773896.42590103,0.0,True,10
